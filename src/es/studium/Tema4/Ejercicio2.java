@@ -1,6 +1,7 @@
-package es.studium.Tema4;
+package es.studium.Ejercicios;
 
 import java.awt.Button;
+import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.Label;
 import java.awt.Panel;
@@ -11,19 +12,37 @@ public class Ejercicio2 extends Frame{
 
 	Panel pnl1 = new Panel();
 	Panel pnl2 = new Panel();
-	TextField txtCampo1 = new TextField ();
-	TextField txtCampo2 = new TextField ();
-	TextField txtCampo3 = new TextField ();
+	Panel pnl3 = new Panel();
+	Panel pnl4 = new Panel();
+	TextField txtCampo1 = new TextField (20);
+	TextField txtCampo2 = new TextField (20);
+	TextField txtCampo3 = new TextField (20);
 	Label lblCan = new Label("Introduzca la Cantidad");
 	Label lblPor = new Label("Introduzca el Porcentaje");
 	Label lblRe = new Label("Resultado");
 	Button btnCal = new Button("Calcular");
 
 	public Ejercicio2() {
+		setLayout(new FlowLayout());
 		setTitle("Calcular el IVA");
 		
-
-		setSize(600,175);
+		pnl1.add(lblCan);
+		pnl1.add(txtCampo1);
+		add(pnl1);
+		
+		pnl2.add(lblPor);
+		pnl2.add(txtCampo2);
+		add(pnl2);
+		pnl3.setLayout(new FlowLayout());
+		pnl3.add(btnCal);
+		pnl3.add(lblRe);
+		add(pnl3);
+		
+		pnl4.setLayout(new FlowLayout());
+		pnl4.add(txtCampo3);
+		add(pnl4);
+		
+		setSize(340,200);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
@@ -32,4 +51,3 @@ public class Ejercicio2 extends Frame{
 		new Ejercicio2();
 	}
 }
-
